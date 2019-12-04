@@ -16,6 +16,9 @@ public class Customer {
     private String lastName;
     private String creditcardNo;
     private Date birthDate;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="adres_id", nullable=false)
+    private Adres adres;
     private String validateMe;
 
     public Long getId() {
@@ -58,5 +61,12 @@ public class Customer {
         this.creditcardNo = creditcardNo;
     }
 
+    public Adres getAdres() {
+        return adres;
+    }
+
+    public void setAdres(Adres adres) {
+        this.adres = adres;
+    }
 }
 
